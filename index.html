@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanjana Reddy Kunta — Data Engineer & AI Pipeline Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,400;1,9..144,500&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfaf6;
+  --bg-cream:#f3efe5;
+  --bg-warm:#ede8da;
+  --surface:#ffffff;
+  --surface-warm:#faf7ee;
+  --ink:#0e0e1a;
+  --ink2:#1f1f2e;
+  --muted:#5e5e72;
+  --muted2:#8a8a9c;
+  --line:rgba(14,14,26,0.08);
+  --line2:rgba(14,14,26,0.16);
+  --indigo:#3b32a8;
+  --indigo2:#5d52d6;
+  --indigo-soft:#eeebff;
+  --plum:#7a2d6e;
+  --emerald:#0e6b4f;
+  --emerald-soft:#e0f2eb;
+  --amber:#9f6914;
+  --amber-soft:#faedd1;
+  --terracotta:#a8472a;
+  --terracotta-soft:#fae5dc;
+  --display:'Fraunces',serif;
+  --sans:'Inter',sans-serif;
+  --mono:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* Subtle paper texture */
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;opacity:.5;mix-blend-mode:multiply
+}
+
+/* ━━━━━━━━━━━━━━━━ NAV ━━━━━━━━━━━━━━━━ */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:18px 56px;display:flex;align-items:center;justify-content:space-between;
+  background:rgba(251,250,246,0.75);backdrop-filter:blur(24px);
+  border-bottom:1px solid transparent;transition:all .3s
+}
+nav.scrolled{background:rgba(251,250,246,0.95);border-bottom-color:var(--line)}
+.logo{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo-dot{width:8px;height:8px;background:var(--indigo);border-radius:50%;display:inline-block;animation:pulse 2.5s ease infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.7)}}
+.nav-links{display:flex;gap:34px;list-style:none;align-items:center}
+.nav-links a{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;letter-spacing:.01em;transition:color .2s;position:relative}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a.cta{background:var(--ink);color:#fff;padding:9px 20px;border-radius:100px;font-weight:600}
+.nav-links a.cta:hover{color:#fff;background:var(--indigo)}
+
+/* ━━━━━━━━━━━━━━━━ HERO ━━━━━━━━━━━━━━━━ */
+#hero{
+  min-height:100vh;padding:140px 56px 80px;
+  display:grid;grid-template-columns:1.2fr .8fr;gap:80px;
+  position:relative;overflow:hidden;align-items:center
+}
+.hero-blob{
+  position:absolute;border-radius:50%;filter:blur(120px);pointer-events:none;z-index:0
+}
+.blob1{width:520px;height:520px;background:radial-gradient(circle,rgba(91,79,209,.18),transparent 70%);top:-100px;right:-50px}
+.blob2{width:400px;height:400px;background:radial-gradient(circle,rgba(168,71,42,.1),transparent 70%);bottom:0;left:-100px}
+.blob3{width:340px;height:340px;background:radial-gradient(circle,rgba(14,107,79,.08),transparent 70%);top:30%;left:30%}
+
+.hero-left{position:relative;z-index:2;animation:slideUp .8s cubic-bezier(.16,1,.3,1) both}
+.hero-right{position:relative;z-index:2;animation:slideUp .8s .15s cubic-bezier(.16,1,.3,1) both}
+
+@keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--indigo);letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:28px
+}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--indigo)}
+.eyebrow::after{content:'';width:6px;height:6px;background:var(--indigo);border-radius:50%}
+
+.hero-h1{
+  font-family:var(--display);
+  font-size:clamp(56px,7.5vw,108px);
+  font-weight:600;line-height:.95;letter-spacing:-.04em;
+  margin-bottom:28px;color:var(--ink);
+  font-variation-settings:"opsz" 144
+}
+.hero-h1 .name-italic{
+  font-style:italic;font-weight:400;color:var(--indigo);
+  display:block;font-size:.85em
+}
+
+.hero-tagline{
+  font-size:18px;color:var(--muted);max-width:560px;
+  line-height:1.65;margin-bottom:32px;font-weight:400
+}
+.hero-tagline strong{color:var(--ink);font-weight:600}
+.hero-tagline em{font-family:var(--display);font-style:italic;color:var(--indigo);font-weight:500;font-size:1.05em}
+
+.hero-roles{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:36px}
+.role-pill{
+  font-family:var(--sans);font-size:13px;font-weight:600;
+  padding:9px 16px 9px 12px;border-radius:100px;
+  background:var(--ink);border:1px solid var(--ink);color:#fff;
+  transition:all .3s cubic-bezier(.16,1,.3,1);cursor:default;
+  display:inline-flex;align-items:center;gap:8px;
+  letter-spacing:-.005em;position:relative;overflow:hidden
+}
+.role-pill::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,var(--indigo) 0%,var(--indigo2) 50%,#7a6df0 100%);
+  opacity:0;transition:opacity .3s;border-radius:100px;z-index:0
+}
+.role-pill:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(91,79,209,.32);border-color:var(--indigo)}
+.role-pill:hover::before{opacity:1}
+.role-pill > *{position:relative;z-index:1}
+.role-pill .pill-icon{
+  width:22px;height:22px;border-radius:50%;
+  background:rgba(255,255,255,.14);
+  display:inline-flex;align-items:center;justify-content:center;
+  font-size:11px;flex-shrink:0;transition:background .3s
+}
+.role-pill:hover .pill-icon{background:rgba(255,255,255,.22)}
+
+.hero-cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:0}
+.btn-dark{
+  background:var(--ink);color:#fff;padding:14px 28px;border-radius:100px;
+  font-size:14px;font-weight:600;text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:all .25s;letter-spacing:.01em
+}
+.btn-dark:hover{background:var(--indigo);transform:translateY(-2px);box-shadow:0 12px 24px rgba(91,79,209,.25)}
+.btn-dark .arrow{transition:transform .25s}
+.btn-dark:hover .arrow{transform:translateX(4px)}
+
+.btn-outline{
+  background:transparent;color:var(--ink);padding:14px 28px;border-radius:100px;
+  font-size:14px;font-weight:600;text-decoration:none;
+  border:1.5px solid var(--ink2);
+  display:inline-flex;align-items:center;gap:10px;
+  transition:all .25s
+}
+.btn-outline:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
+
+.icon-btn{
+  width:46px;height:46px;border-radius:50%;
+  background:var(--surface);border:1.5px solid var(--line2);
+  display:inline-flex;align-items:center;justify-content:center;
+  color:var(--ink);text-decoration:none;transition:all .25s
+}
+.icon-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink);transform:translateY(-2px)}
+
+/* Hero right - showcase card */
+.showcase{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:24px;padding:32px;
+  box-shadow:0 1px 0 rgba(255,255,255,.8) inset, 0 24px 60px -20px rgba(14,14,26,.12);
+  position:relative;overflow:hidden
+}
+.showcase::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(91,79,209,.3),transparent)
+}
+.showcase-header{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:24px;padding-bottom:18px;border-bottom:1px dashed var(--line)
+}
+.sh-title{font-family:var(--mono);font-size:11px;color:var(--muted2);letter-spacing:.1em;text-transform:uppercase}
+.sh-dots{display:flex;gap:6px}
+.sh-dots span{width:8px;height:8px;border-radius:50%;background:var(--line2)}
+.sh-dots span:first-child{background:#e87b65}
+.sh-dots span:nth-child(2){background:#e8b65c}
+.sh-dots span:last-child{background:#7ab987}
+
+.metric-card{padding:18px 0;border-bottom:1px solid var(--line);display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.metric-card:last-child{border-bottom:none;padding-bottom:0}
+.metric-card:first-child{padding-top:0}
+.mc-label{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted2);margin-bottom:4px}
+.mc-text{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.mc-num{
+  font-family:var(--display);font-size:42px;font-weight:600;line-height:1;
+  letter-spacing:-.03em;color:var(--ink);
+  font-variation-settings:"opsz" 144
+}
+.mc-num span{color:var(--indigo);font-style:italic;font-weight:400}
+.mc-num.small{font-size:28px}
+
+/* ━━━━━━━━━━━━━━━━ MARQUEE ━━━━━━━━━━━━━━━━ */
+.marquee{
+  background:var(--ink);color:#fff;
+  padding:24px 0;overflow:hidden;
+  border-top:1px solid var(--ink2);border-bottom:1px solid var(--ink2)
+}
+.marquee-track{
+  display:flex;gap:48px;
+  animation:scroll 50s linear infinite;
+  white-space:nowrap;width:max-content
+}
+.marquee-item{
+  font-family:var(--display);font-size:32px;font-weight:500;
+  font-style:italic;letter-spacing:-.01em;
+  display:flex;align-items:center;gap:48px
+}
+.marquee-item::after{content:'✦';color:var(--indigo2);font-style:normal;font-size:24px}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ━━━━━━━━━━━━━━━━ SECTIONS ━━━━━━━━━━━━━━━━ */
+section{padding:120px 56px;position:relative}
+
+.s-header{margin-bottom:72px;max-width:760px}
+.s-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  color:var(--indigo);letter-spacing:.12em;text-transform:uppercase;
+  margin-bottom:20px
+}
+.s-eyebrow::before{content:'';width:24px;height:1px;background:var(--indigo)}
+.s-title{
+  font-family:var(--display);
+  font-size:clamp(40px,5.5vw,72px);
+  font-weight:500;line-height:1.0;letter-spacing:-.03em;
+  color:var(--ink);margin-bottom:16px;
+  font-variation-settings:"opsz" 144
+}
+.s-title em{font-style:italic;color:var(--indigo);font-weight:400}
+.s-subtitle{font-size:17px;color:var(--muted);line-height:1.65;max-width:580px}
+
+/* ━━━━━━━━━━━━━━━━ ABOUT ━━━━━━━━━━━━━━━━ */
+#about{background:var(--bg-cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:80px;align-items:start}
+.about-prose p{font-size:17px;color:var(--muted);line-height:1.75;margin-bottom:20px;font-weight:400}
+.about-prose p strong{color:var(--ink);font-weight:600}
+.about-prose p:first-child{font-size:20px;color:var(--ink);font-weight:500;line-height:1.55}
+.about-prose p:first-child strong{color:var(--indigo)}
+
+.target-row{
+  display:flex;flex-wrap:wrap;gap:8px;margin-top:32px;
+  padding-top:28px;border-top:1px solid var(--line)
+}
+.target-tag{
+  font-family:var(--sans);font-size:12.5px;font-weight:600;
+  padding:6px 14px;border-radius:6px
+}
+.tt-indigo{background:var(--indigo-soft);color:var(--indigo)}
+.tt-emerald{background:var(--emerald-soft);color:var(--emerald)}
+.tt-terracotta{background:var(--terracotta-soft);color:var(--terracotta)}
+.tt-amber{background:var(--amber-soft);color:var(--amber)}
+
+.highlights{display:flex;flex-direction:column;gap:14px}
+.h-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:18px;padding:22px 24px;
+  display:flex;gap:18px;align-items:flex-start;
+  transition:all .3s;position:relative;overflow:hidden
+}
+.h-card::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:var(--indigo);opacity:0;transition:opacity .3s
+}
+.h-card:hover{transform:translateX(6px);border-color:var(--line2);box-shadow:0 8px 20px -8px rgba(14,14,26,.1)}
+.h-card:hover::before{opacity:1}
+.h-icon{
+  font-size:24px;flex-shrink:0;
+  width:44px;height:44px;border-radius:12px;
+  background:var(--bg-warm);
+  display:flex;align-items:center;justify-content:center
+}
+.h-title{font-family:var(--display);font-size:18px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-.01em}
+.h-desc{font-size:13.5px;color:var(--muted);line-height:1.6}
+
+/* About section — unify content under the heading (paragraphs, tags, card text) */
+#about .about-prose p,
+#about .about-prose p:first-child,
+#about .target-tag,
+#about .h-title,
+#about .h-desc{
+  font-family:var(--sans);
+  font-size:15px;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--muted);
+  letter-spacing:0;
+}
+#about .about-prose p strong,
+#about .h-title{font-weight:600;color:var(--ink)}
+#about .target-tag{font-weight:600;line-height:1.4}
+
+/* ━━━━━━━━━━━━━━━━ SKILLS ━━━━━━━━━━━━━━━━ */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sk-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:20px;padding:30px 28px;
+  transition:all .3s;position:relative;overflow:hidden
+}
+.sk-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  border-radius:20px 20px 0 0;
+  transition:height .3s
+}
+.sk-card.c1::before{background:linear-gradient(90deg,var(--indigo),var(--indigo2))}
+.sk-card.c2::before{background:linear-gradient(90deg,var(--emerald),#1e9b73)}
+.sk-card.c3::before{background:linear-gradient(90deg,var(--terracotta),#c8633f)}
+.sk-card.c4::before{background:linear-gradient(90deg,var(--amber),#c98826)}
+.sk-card.c5::before{background:linear-gradient(90deg,var(--plum),#a04190)}
+.sk-card.c6::before{background:linear-gradient(90deg,#1e6092,#3083bd)}
+.sk-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px -16px rgba(14,14,26,.12)}
+.sk-card:hover::before{height:4px}
+
+.sk-num{
+  font-family:var(--mono);font-size:11px;
+  color:var(--muted2);letter-spacing:.08em;margin-bottom:14px;
+  display:flex;align-items:center;gap:8px
+}
+.sk-num::after{content:'';flex:1;height:1px;background:var(--line);max-width:40px}
+.sk-icon-row{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sk-icon{font-size:30px;line-height:1}
+.sk-title{font-family:var(--display);font-size:22px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
+.sk-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:18px}
+.sk-tag{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  padding:4px 10px;border-radius:6px;
+  background:var(--bg-warm);color:var(--ink2);
+  border:1px solid transparent;transition:all .2s
+}
+.sk-card.c1 .sk-tag{background:var(--indigo-soft);color:var(--indigo)}
+.sk-card.c2 .sk-tag{background:var(--emerald-soft);color:var(--emerald)}
+.sk-card.c3 .sk-tag{background:var(--terracotta-soft);color:var(--terracotta)}
+.sk-card.c4 .sk-tag{background:var(--amber-soft);color:var(--amber)}
+
+/* ━━━━━━━━━━━━━━━━ PROJECTS ━━━━━━━━━━━━━━━━ */
+#projects{background:var(--bg-cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.p-filter{display:flex;gap:8px;flex-wrap:wrap;margin-top:-32px;margin-bottom:48px}
+.fbtn{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  padding:8px 18px;border-radius:100px;
+  border:1px solid var(--line2);background:transparent;
+  color:var(--muted);cursor:pointer;transition:all .25s;letter-spacing:.04em
+}
+.fbtn:hover{color:var(--ink);border-color:var(--ink)}
+.fbtn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+.p-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.p-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:24px;padding:36px;
+  display:flex;flex-direction:column;
+  transition:all .35s cubic-bezier(.16,1,.3,1);
+  position:relative;overflow:hidden
+}
+.p-card::after{
+  content:'';position:absolute;top:0;right:0;
+  width:140px;height:140px;
+  background:radial-gradient(circle at top right,rgba(91,79,209,.08),transparent 70%);
+  opacity:0;transition:opacity .35s
+}
+.p-card:hover{transform:translateY(-8px);box-shadow:0 32px 60px -28px rgba(14,14,26,.18);border-color:var(--line2)}
+.p-card:hover::after{opacity:1}
+.p-card.featured{
+  grid-column:1/-1;
+  display:grid;grid-template-columns:1.4fr .8fr;gap:48px;
+  background:linear-gradient(135deg,var(--surface) 0%,var(--surface-warm) 100%)
+}
+
+.pc-role{
+  font-family:var(--mono);font-size:10px;font-weight:600;
+  letter-spacing:.1em;padding:5px 11px;border-radius:6px;
+  display:inline-block;margin-bottom:18px;text-transform:uppercase;width:fit-content
+}
+.pc-role.r-ai{background:var(--indigo-soft);color:var(--indigo)}
+.pc-role.r-de{background:var(--emerald-soft);color:var(--emerald)}
+.pc-role.r-ml{background:var(--terracotta-soft);color:var(--terracotta)}
+.pc-role.r-fs{background:#dde7f3;color:#1e5688}
+
+.pc-title{
+  font-family:var(--display);font-size:28px;font-weight:600;
+  color:var(--ink);line-height:1.15;letter-spacing:-.02em;margin-bottom:14px
+}
+.p-card:not(.featured) .pc-title{font-size:22px}
+
+.pc-desc{font-size:15px;color:var(--muted);line-height:1.7;flex:1;margin-bottom:24px}
+.p-card:not(.featured) .pc-desc{font-size:14px}
+
+.pc-stack{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:20px}
+.pc-tag{
+  font-family:var(--mono);font-size:11px;font-weight:500;
+  padding:4px 10px;border-radius:5px;
+  background:var(--bg-warm);color:var(--ink2);
+  border:1px solid var(--line)
+}
+
+.pc-metrics{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.mch{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--emerald-soft);border:1px solid rgba(14,107,79,.18);
+  border-radius:100px;padding:5px 12px;
+  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--emerald)
+}
+
+.pc-link{
+  align-self:flex-start;font-family:var(--sans);font-size:13px;font-weight:600;
+  color:var(--ink);text-decoration:none;
+  display:inline-flex;align-items:center;gap:8px;
+  padding:10px 20px;border-radius:100px;border:1.5px solid var(--ink2);
+  transition:all .25s
+}
+.pc-link:hover{background:var(--ink);color:#fff}
+.pc-link .arr{transition:transform .25s}
+.pc-link:hover .arr{transform:translate(2px,-2px)}
+
+.pc-arch{
+  background:var(--bg-cream);border:1px solid var(--line);
+  border-radius:16px;padding:24px;margin-top:auto
+}
+.pc-arch-label{
+  font-family:var(--mono);font-size:10px;color:var(--muted2);
+  letter-spacing:.08em;text-transform:uppercase;margin-bottom:14px
+}
+.pc-arch-flow{font-size:13px;color:var(--ink);line-height:1.7;font-weight:500;font-family:var(--display);font-style:italic}
+
+/* ━━━━━━━━━━━━━━━━ EXPERIENCE ━━━━━━━━━━━━━━━━ */
+.tl{position:relative;max-width:920px;margin-top:0}
+.tl::before{
+  content:'';position:absolute;left:14px;top:0;bottom:0;width:1px;
+  background:linear-gradient(to bottom,var(--indigo) 0%,var(--emerald) 50%,var(--terracotta) 100%);
+  opacity:.3
+}
+.tl-item{padding:0 0 64px 56px;position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-marker{
+  position:absolute;left:0;top:6px;
+  width:30px;height:30px;border-radius:50%;
+  background:var(--surface);border:1.5px solid var(--ink2);
+  display:flex;align-items:center;justify-content:center;
+  z-index:2;font-size:12px
+}
+.tl-item.current .tl-marker{background:var(--ink);border-color:var(--ink);color:#fff}
+.tl-item.current .tl-marker::after{
+  content:'';position:absolute;inset:-6px;border-radius:50%;
+  border:1.5px solid var(--indigo);opacity:.4;
+  animation:ringPulse 2s ease infinite
+}
+@keyframes ringPulse{0%,100%{transform:scale(1);opacity:.4}50%{transform:scale(1.15);opacity:0}}
+
+.tl-date{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:var(--mono);font-size:11px;color:var(--indigo);
+  letter-spacing:.08em;margin-bottom:8px;font-weight:600
+}
+.tl-date .badge{
+  font-size:9px;padding:2px 7px;border-radius:4px;
+  background:var(--ink);color:#fff;letter-spacing:.06em
+}
+.tl-role{font-family:var(--display);font-size:30px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em;line-height:1.1}
+.tl-co{
+  font-size:14.5px;color:var(--muted);margin-bottom:22px;
+  display:flex;align-items:center;gap:10px
+}
+.tl-co strong{color:var(--ink);font-weight:600}
+.tl-co em{font-style:normal;color:var(--muted2)}
+.tl-co .sep{width:3px;height:3px;border-radius:50%;background:var(--muted2)}
+.tl-bullets{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:18px}
+.tl-bullets li{
+  font-size:14.5px;color:var(--ink2);line-height:1.7;
+  padding-left:24px;position:relative
+}
+.tl-bullets li::before{
+  content:'';position:absolute;left:0;top:11px;
+  width:14px;height:1px;background:var(--indigo)
+}
+.tl-bullets li strong{color:var(--ink);font-weight:600}
+.tl-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tl-chip{
+  display:inline-flex;align-items:center;gap:5px;
+  background:var(--emerald-soft);border:1px solid rgba(14,107,79,.18);
+  border-radius:100px;padding:5px 12px;
+  font-family:var(--mono);font-size:11px;font-weight:500;color:var(--emerald)
+}
+
+/* ━━━━━━━━━━━━━━━━ EDUCATION ━━━━━━━━━━━━━━━━ */
+#education{background:var(--bg-cream);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.edu-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px}
+.edu-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:24px;padding:36px;
+  transition:all .3s;position:relative;overflow:hidden
+}
+.edu-card::before{
+  content:'';position:absolute;top:0;right:0;font-size:160px;
+  font-family:var(--display);font-style:italic;line-height:1;
+  color:var(--bg-warm);z-index:0;font-weight:400
+}
+.edu-card.e1::before{content:'M.S.';top:-20px;right:24px}
+.edu-card.e2::before{content:'B.Tech';top:-20px;right:24px;font-size:110px}
+.edu-card>*{position:relative;z-index:1}
+.edu-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px -16px rgba(14,14,26,.1)}
+.edu-icon{font-size:32px;margin-bottom:18px;display:block}
+.edu-deg{font-family:var(--display);font-size:24px;font-weight:600;color:var(--ink);margin-bottom:6px;letter-spacing:-.02em;line-height:1.2}
+.edu-school{font-size:15px;font-weight:600;color:var(--indigo);margin-bottom:4px}
+.edu-loc{font-family:var(--mono);font-size:11.5px;color:var(--muted2);margin-bottom:20px}
+.edu-courses{font-size:13.5px;color:var(--muted);line-height:1.65;padding-bottom:18px;border-bottom:1px dashed var(--line);margin-bottom:14px}
+.edu-years{font-family:var(--mono);font-size:11px;color:var(--ink);font-weight:600;letter-spacing:.04em}
+
+.cert-section-label{
+  font-family:var(--mono);font-size:11px;color:var(--muted2);
+  letter-spacing:.12em;text-transform:uppercase;margin-bottom:20px
+}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cert-card{
+  background:var(--surface);border:1px solid var(--line);
+  border-radius:14px;padding:18px 20px;
+  display:flex;align-items:flex-start;gap:12px;
+  transition:all .25s
+}
+.cert-card:hover{transform:translateY(-3px);border-color:var(--indigo);box-shadow:0 10px 24px -12px rgba(91,79,209,.2)}
+.cert-icon{
+  width:24px;height:24px;border-radius:50%;background:var(--emerald-soft);
+  color:var(--emerald);display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px
+}
+.cert-text{font-size:13.5px;font-weight:500;color:var(--ink);line-height:1.45}
+
+/* ━━━━━━━━━━━━━━━━ CONTACT ━━━━━━━━━━━━━━━━ */
+#contact{background:var(--ink);color:#fff;padding:140px 56px}
+#contact .s-eyebrow{color:#a89bff}
+#contact .s-eyebrow::before{background:#a89bff}
+#contact .s-title{color:#fff}
+#contact .s-title em{color:#a89bff}
+
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.c-tagline{
+  font-family:var(--display);font-size:32px;font-weight:500;
+  color:#fff;line-height:1.3;margin-bottom:36px;letter-spacing:-.02em
+}
+.c-tagline em{font-style:italic;color:#a89bff}
+.c-info{display:flex;flex-direction:column;gap:18px}
+.ci-row{display:flex;align-items:center;gap:18px}
+.ci-icon-wrap{
+  width:48px;height:48px;border-radius:14px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);
+  display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0
+}
+.ci-label{font-family:var(--mono);font-size:11px;color:#8b8ba0;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px}
+.ci-value{font-size:15px;font-weight:500;color:#fff}
+.ci-value a{color:#fff;text-decoration:none;border-bottom:1px solid rgba(168,155,255,.4);transition:all .2s}
+.ci-value a:hover{color:#a89bff;border-color:#a89bff}
+
+.contact-card{
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);
+  border-radius:24px;padding:40px;
+  position:relative;overflow:hidden;backdrop-filter:blur(20px)
+}
+.contact-card::before{
+  content:'';position:absolute;top:-100px;right:-100px;
+  width:280px;height:280px;
+  background:radial-gradient(circle,rgba(168,155,255,.15),transparent 70%);pointer-events:none
+}
+.cc-h{font-family:var(--display);font-size:26px;font-weight:600;color:#fff;margin-bottom:8px;letter-spacing:-.02em}
+.cc-h em{font-style:italic;color:#a89bff}
+.cc-d{font-size:14.5px;color:#a8a8c0;line-height:1.65;margin-bottom:28px}
+.cc-btns{display:flex;flex-direction:column;gap:10px}
+.cc-btn{
+  display:flex;align-items:center;gap:14px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  border-radius:14px;padding:14px 20px;
+  text-decoration:none;color:#fff;font-weight:600;font-size:14px;
+  transition:all .25s
+}
+.cc-btn:hover{background:rgba(168,155,255,.1);border-color:#a89bff;transform:translateX(4px)}
+.cc-icon{font-size:18px;width:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;color:#a89bff}
+
+/* ━━━━━━━━━━━━━━━━ FOOTER ━━━━━━━━━━━━━━━━ */
+footer{
+  background:var(--ink);color:#a8a8c0;
+  padding:30px 56px;border-top:1px solid rgba(255,255,255,.08);
+  display:flex;justify-content:space-between;align-items:center
+}
+footer p{font-size:12.5px;font-family:var(--mono)}
+footer span{color:#a89bff;font-weight:600}
+
+/* ━━━━━━━━━━━━━━━━ ANIMATIONS ━━━━━━━━━━━━━━━━ */
+.rv{opacity:0;transform:translateY(32px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+.rv.on{opacity:1;transform:none}
+.rv-d1{transition-delay:.08s}
+.rv-d2{transition-delay:.16s}
+.rv-d3{transition-delay:.24s}
+
+/* ━━━━━━━━━━━━━━━━ RESPONSIVE ━━━━━━━━━━━━━━━━ */
+@media(max-width:1024px){
+  #hero{grid-template-columns:1fr;gap:48px;padding:120px 32px 60px}
+  .hero-right{max-width:520px}
+}
+@media(max-width:768px){
+  nav{padding:16px 24px}
+  .nav-links{display:none}
+  section{padding:80px 24px}
+  #hero{padding:110px 24px 50px}
+  #contact{padding:90px 24px}
+  footer{padding:24px;flex-direction:column;gap:8px;text-align:center}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:48px}
+  .skills-grid{grid-template-columns:1fr}
+  .p-grid{grid-template-columns:1fr}
+  .p-card.featured{grid-template-columns:1fr;gap:24px}
+  .edu-grid{grid-template-columns:1fr}
+  .cert-grid{grid-template-columns:1fr 1fr}
+  .marquee-item{font-size:24px}
+  .tl::before{left:11px}
+  .tl-item{padding-left:48px}
+  .tl-marker{width:24px;height:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════════════════ NAV ════════════════════ -->
+<nav id="mnav">
+  <a class="logo" href="#hero">
+    <span class="logo-dot"></span>
+    Sanjana<em style="font-style:italic;font-weight:400;color:var(--indigo)">.</em>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact" class="cta">Hire Me →</a></li>
+  </ul>
+</nav>
+
+<!-- ════════════════════ HERO ════════════════════ -->
+<section id="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-blob blob3"></div>
+
+  <div class="hero-left">
+    <div class="eyebrow">Data Engineer · AI Pipeline Specialist</div>
+
+    <h1 class="hero-h1">
+      Sanjana
+      <span class="name-italic">Reddy Kunta</span>
+    </h1>
+
+    <p class="hero-tagline">
+      I build the <strong>data pipelines that power production AI</strong> — from <strong>Snowflake + dbt analytics platforms</strong> serving <em>Medicare Advantage</em> decisions, to <strong>RAG ingestion and embedding pipelines</strong> behind clinical knowledge retrieval.
+    </p>
+
+    <div class="hero-roles">
+      <span class="role-pill featured"><span class="pill-icon">⚕</span>Healthcare Data Engineer</span>
+      <span class="role-pill"><span class="pill-icon">✦</span>RAG / GenAI Pipelines</span>
+      <span class="role-pill"><span class="pill-icon">❄</span>Snowflake · dbt</span>
+      <span class="role-pill"><span class="pill-icon">★</span>Medicare Advantage</span>
+    </div>
+
+    <div class="hero-cta-row">
+      <a href="#contact" class="btn-dark">Get in Touch <span class="arrow">→</span></a>
+      <a href="#projects" class="btn-outline">View Work</a>
+      <a href="https://linkedin.com/in/sanjana-rddy" target="_blank" class="icon-btn" title="LinkedIn">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://github.com/SanjanaReddyK" target="_blank" class="icon-btn" title="GitHub">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="showcase">
+      <div class="showcase-header">
+        <div class="sh-title">Impact at Optum</div>
+        <div class="sh-dots"><span></span><span></span><span></span></div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="mc-label">Years at Optum</div>
+          <div class="mc-text">Data Engineer with AI · Healthcare</div>
+        </div>
+        <div class="mc-num">3<span>+</span></div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="mc-label">Data delivery efficiency</div>
+          <div class="mc-text">Across 12+ analytics &amp; AI use cases</div>
+        </div>
+        <div class="mc-num">↑45<span>%</span></div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="mc-label">Data accuracy SLA</div>
+          <div class="mc-text">10+ source systems integrated</div>
+        </div>
+        <div class="mc-num">99.8<span>%</span></div>
+      </div>
+      <div class="metric-card">
+        <div>
+          <div class="mc-label">Data prep time saved</div>
+          <div class="mc-text">Through pipeline automation</div>
+        </div>
+        <div class="mc-num small">↓35<span>%</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ MARQUEE ════════════════════ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">Snowflake</span>
+    <span class="marquee-item">dbt</span>
+    <span class="marquee-item">Apache Airflow</span>
+    <span class="marquee-item">PySpark</span>
+    <span class="marquee-item">LangChain</span>
+    <span class="marquee-item">RAG Pipelines</span>
+    <span class="marquee-item">Power BI</span>
+    <span class="marquee-item">Medicare Advantage</span>
+    <span class="marquee-item">Snowflake</span>
+    <span class="marquee-item">dbt</span>
+    <span class="marquee-item">Apache Airflow</span>
+    <span class="marquee-item">PySpark</span>
+    <span class="marquee-item">LangChain</span>
+    <span class="marquee-item">RAG Pipelines</span>
+    <span class="marquee-item">Power BI</span>
+    <span class="marquee-item">Medicare Advantage</span>
+  </div>
+</div>
+
+<!-- ════════════════════ ABOUT ════════════════════ -->
+<section id="about">
+  <div class="s-header">
+    <div class="s-eyebrow">01 / About Me</div>
+    <h2 class="s-title">Full-stack Data &amp; AI Engineer<br>in <em>healthcare</em></h2>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-prose rv">
+      <p>
+        Full-stack <strong>Data and Analytics Engineer</strong> with an M.S. in Computer Science and 3+ years of experience in healthcare data engineering and AI/ML enablement.
+      </p>
+      <p>
+        I build analytics-ready datasets, semantic layers, governed metric definitions, and ML-ready feature pipelines that power dashboards, predictive models, and generative AI applications for health plan decision-makers.
+      </p>
+      <p>
+        Deep <strong>Medicare Advantage domain expertise</strong> at Optum Healthcare — hands-on with claims data, member enrollment, provider data, risk adjustment, and Stars/quality analytics. Proficient in <strong>Snowflake, Azure Synapse, dbt, and Azure Data Factory</strong>, and experienced integrating <strong>LLM/NLP use cases including RAG pipelines</strong>, embeddings, and vector store search.
+      </p>
+      <p>
+        Applying responsible data practices (PHI/PII protection, data lineage, AI guardrails) and collaborating cross-functionally to <strong>operationalize models in production</strong>.
+      </p>
+      <div class="target-row">
+        <span class="target-tag tt-indigo">AI Engineer</span>
+        <span class="target-tag tt-emerald">Data Engineer</span>
+        <span class="target-tag tt-terracotta">Analytics Engineer</span>
+        <span class="target-tag tt-amber">ML Engineer</span>
+        <span class="target-tag tt-indigo">Python Developer</span>
+      </div>
+    </div>
+
+    <div class="highlights rv rv-d1">
+      <div class="h-card">
+        <div class="h-icon">🏥</div>
+        <div>
+          <div class="h-title">Healthcare Domain Depth</div>
+          <div class="h-desc">Hands-on with Medicare Advantage claims, member enrollment, provider data, risk adjustment, and Stars/quality analytics at Optum.</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-icon">⚡</div>
+        <div>
+          <div class="h-title">Pipeline-First AI Engineering</div>
+          <div class="h-desc">Build the data pipelines powering RAG/GenAI — ingestion, chunking, embeddings, vector indexing, lineage, and PHI/PII protection.</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-icon">📈</div>
+        <div>
+          <div class="h-title">Measurable Business Impact</div>
+          <div class="h-desc">45% data delivery efficiency gains, 99.8% data accuracy SLA, and 35% reduction in data prep effort across 12+ use cases.</div>
+        </div>
+      </div>
+      <div class="h-card">
+        <div class="h-icon">🤝</div>
+        <div>
+          <div class="h-title">Cross-Functional Collaboration</div>
+          <div class="h-desc">Partner with data scientists, AI engineers, Operations, Finance, and Clinical teams to ship production data and AI workflows.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ SKILLS ════════════════════ -->
+<section id="skills">
+  <div class="s-header">
+    <div class="s-eyebrow">02 / Technical Skills</div>
+    <h2 class="s-title">The complete <em>data + AI stack</em></h2>
+    <p class="s-subtitle">Every layer of the modern healthcare data platform — from raw ingestion through analytics-ready datasets to production AI applications.</p>
+  </div>
+
+  <div class="skills-grid">
+    <div class="sk-card c1 rv">
+      <div class="sk-num">SK / 01</div>
+      <div class="sk-icon-row"><div class="sk-icon">🗄️</div><div class="sk-title">SQL, Cloud &amp; ETL</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">SQL · Advanced</span><span class="sk-tag">Snowflake</span><span class="sk-tag">Azure Synapse</span><span class="sk-tag">dbt</span><span class="sk-tag">Azure Data Factory</span><span class="sk-tag">Coalesce</span><span class="sk-tag">Delta Lake</span><span class="sk-tag">Redshift</span><span class="sk-tag">AWS Athena</span><span class="sk-tag">Hive</span>
+      </div>
+    </div>
+
+    <div class="sk-card c2 rv rv-d1">
+      <div class="sk-num">SK / 02</div>
+      <div class="sk-icon-row"><div class="sk-icon">🤖</div><div class="sk-title">Python, ML &amp; GenAI</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">Python · pandas · PySpark</span><span class="sk-tag">scikit-learn</span><span class="sk-tag">Feature Engineering</span><span class="sk-tag">RAG / LLMs</span><span class="sk-tag">LangChain · LangGraph</span><span class="sk-tag">Embeddings</span><span class="sk-tag">Vector Stores</span><span class="sk-tag">TensorFlow · PyTorch</span><span class="sk-tag">CrewAI · Agentic AI</span>
+      </div>
+    </div>
+
+    <div class="sk-card c3 rv rv-d2">
+      <div class="sk-num">SK / 03</div>
+      <div class="sk-icon-row"><div class="sk-icon">🏥</div><div class="sk-title">Healthcare Domain</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">Medicare Advantage</span><span class="sk-tag">Claims Data</span><span class="sk-tag">Member Enrollment</span><span class="sk-tag">Provider Data</span><span class="sk-tag">Risk Adjustment</span><span class="sk-tag">Stars / Quality</span><span class="sk-tag">HIPAA / PHI</span><span class="sk-tag">Health Plan Analytics</span>
+      </div>
+    </div>
+
+    <div class="sk-card c4 rv">
+      <div class="sk-num">SK / 04</div>
+      <div class="sk-icon-row"><div class="sk-icon">📊</div><div class="sk-title">BI &amp; Semantic Layer</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">Power BI · DP-500</span><span class="sk-tag">Semantic Layer Design</span><span class="sk-tag">DAX · Power Query</span><span class="sk-tag">Tableau</span><span class="sk-tag">Streamlit</span><span class="sk-tag">Data Lineage</span><span class="sk-tag">Governed Metrics</span><span class="sk-tag">MicroStrategy</span>
+      </div>
+    </div>
+
+    <div class="sk-card c5 rv rv-d1">
+      <div class="sk-num">SK / 05</div>
+      <div class="sk-icon-row"><div class="sk-icon">⚡</div><div class="sk-title">Pipelines &amp; Streaming</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">Apache Spark · PySpark</span><span class="sk-tag">Apache Airflow</span><span class="sk-tag">Kafka · Confluent</span><span class="sk-tag">Great Expectations</span><span class="sk-tag">FAISS · Pinecone</span><span class="sk-tag">AWS EMR · Glue</span><span class="sk-tag">MLflow · W&amp;B</span><span class="sk-tag">Evidently AI</span>
+      </div>
+    </div>
+
+    <div class="sk-card c6 rv rv-d2">
+      <div class="sk-num">SK / 06</div>
+      <div class="sk-icon-row"><div class="sk-icon">🔧</div><div class="sk-title">DevOps &amp; Cloud</div></div>
+      <div class="sk-tags">
+        <span class="sk-tag">Git · GitHub Actions</span><span class="sk-tag">Azure DevOps</span><span class="sk-tag">Docker · Kubernetes</span><span class="sk-tag">AWS · S3 · Lambda · Glue</span><span class="sk-tag">Azure · AKS · ADLS</span><span class="sk-tag">GCP Vertex AI</span><span class="sk-tag">Terraform</span><span class="sk-tag">Agile / Scrum</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ PROJECTS ════════════════════ -->
+<section id="projects">
+  <div class="s-header">
+    <div class="s-eyebrow">03 / Featured Projects</div>
+    <h2 class="s-title">Production-grade work,<br><em>openly documented</em></h2>
+    <p class="s-subtitle">Selected projects spanning data engineering, RAG/GenAI pipelines, and full-stack development.</p>
+  </div>
+
+  <div class="p-filter">
+    <button class="fbtn active" onclick="fp('all',this)">All</button>
+    <button class="fbtn" onclick="fp('ai',this)">AI / GenAI</button>
+    <button class="fbtn" onclick="fp('de',this)">Data Engineering</button>
+  </div>
+
+  <div class="p-grid">
+
+    <!-- P1 Featured -->
+    <div class="p-card featured rv" data-cat="ai">
+      <div>
+        <div class="pc-role r-ai">AI Engineer / Data Engineer</div>
+        <h3 class="pc-title">PDF RAG Chatbot — Retrieval-Augmented Generation</h3>
+        <p class="pc-desc">A RAG application allowing users to query PDF documents using semantic search powered by LangChain, HuggingFace embeddings, and vector database. Demonstrates end-to-end GenAI engineering: PDF ingestion, text chunking, embedding generation, vector indexing, and retrieval — runnable locally on Windows.</p>
+        <div class="pc-stack">
+          <span class="pc-tag">Python 3.12</span><span class="pc-tag">LangChain</span><span class="pc-tag">HuggingFace</span><span class="pc-tag">FAISS</span><span class="pc-tag">PyPDF</span><span class="pc-tag">Vector Embeddings</span><span class="pc-tag">Semantic Search</span>
+        </div>
+        <div class="pc-metrics">
+          <span class="mch">Answer groundedness</span><span class="mch">Retrieval hit@k</span><span class="mch">Latency p50/p95</span>
+        </div>
+        <a href="https://github.com/SanjanaReddyK" class="pc-link" target="_blank">View Code <span class="arr">↗</span></a>
+      </div>
+      <div class="pc-arch">
+        <div class="pc-arch-label">Architecture Flow</div>
+        <div class="pc-arch-flow">
+          PDF Ingestion<br>↓<br>Text Chunking<br>↓<br>HuggingFace Embeddings<br>↓<br>FAISS Vector Index<br>↓<br>LangChain Retrieval Chain<br>↓<br>Semantic Answer Generation
+        </div>
+      </div>
+    </div>
+
+    <!-- P2 -->
+    <div class="p-card rv" data-cat="de">
+      <div class="pc-role r-de">Data Engineer / Analytics Engineer</div>
+      <h3 class="pc-title">Medicare Advantage Analytics Platform</h3>
+      <p class="pc-desc">Governed analytics platform with semantic layer serving BI dashboards and ML features from one source of truth across claims, enrollment, and Stars quality data. Full dbt staging → mart layers with automated tests and lineage.</p>
+      <div class="pc-stack">
+        <span class="pc-tag">dbt Core</span><span class="pc-tag">Snowflake</span><span class="pc-tag">Airflow</span><span class="pc-tag">PySpark</span><span class="pc-tag">Great Expectations</span><span class="pc-tag">Power BI</span><span class="pc-tag">Kafka</span>
+      </div>
+      <div class="pc-metrics">
+        <span class="mch">99.8% test pass rate</span><span class="mch">Query perf gains</span><span class="mch">Data freshness SLA</span>
+      </div>
+      <a href="https://github.com/SanjanaReddyK" class="pc-link" target="_blank">View Code <span class="arr">↗</span></a>
+    </div>
+
+    <!-- P3 -->
+    <div class="p-card rv rv-d1" data-cat="ai">
+      <div class="pc-role r-ai">Agentic AI / AI Engineer</div>
+      <h3 class="pc-title">Multi-Agent Healthcare Workflow Automation</h3>
+      <p class="pc-desc">Agentic AI system for prior authorization research — 5 specialized agents with HITL checkpoints. Real tool-use: PubMed search, clinical guideline retrieval, ICD-10 validator, drug interaction checker. Full LangSmith trace observability.</p>
+      <div class="pc-stack">
+        <span class="pc-tag">LangGraph</span><span class="pc-tag">CrewAI</span><span class="pc-tag">GPT-4o</span><span class="pc-tag">Claude 3.5</span><span class="pc-tag">Pinecone</span><span class="pc-tag">LangSmith</span><span class="pc-tag">FastAPI</span><span class="pc-tag">Streamlit</span>
+      </div>
+      <div class="pc-metrics">
+        <span class="mch">↓80% manual research</span><span class="mch">Decision accuracy</span><span class="mch">HITL approval rate</span>
+      </div>
+      <a href="https://github.com/SanjanaReddyK" class="pc-link" target="_blank">View Code <span class="arr">↗</span></a>
+    </div>
+
+    <!-- P4 -->
+    <div class="p-card rv" data-cat="de">
+      <div class="pc-role r-fs">Full Stack Developer</div>
+      <h3 class="pc-title">Basic Banking System — Internship</h3>
+      <p class="pc-desc">A web application for transferring money between multiple users. Features user management, money transfers, and transaction history tracking. Internship project at The Sparks Foundation demonstrating full-stack fundamentals.</p>
+      <div class="pc-stack">
+        <span class="pc-tag">HTML</span><span class="pc-tag">CSS</span><span class="pc-tag">Bootstrap</span><span class="pc-tag">JavaScript</span><span class="pc-tag">PHP</span><span class="pc-tag">MySQL</span>
+      </div>
+      <div class="pc-metrics">
+        <span class="mch">100% transaction accuracy</span><span class="mch">Real-time balances</span>
+      </div>
+      <a href="https://github.com/SanjanaReddyK" class="pc-link" target="_blank">View Code <span class="arr">↗</span></a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ EXPERIENCE ════════════════════ -->
+<section id="experience">
+  <div class="s-header">
+    <div class="s-eyebrow">04 / Work Experience</div>
+    <h2 class="s-title">Where I've <em>shipped things</em><br>that matter in healthcare</h2>
+  </div>
+
+  <div class="tl">
+
+    <div class="tl-item current rv">
+      <div class="tl-marker">●</div>
+      <div class="tl-date">JUL 2024 – PRESENT <span class="badge">CURRENT</span></div>
+      <div class="tl-role">Data Engineer</div>
+      <div class="tl-co"><strong>Optum Healthcare</strong><span class="sep"></span><em>Plano, TX</em></div>
+      <ul class="tl-bullets">
+        <li>Designed and maintained <strong>scalable data pipelines</strong> integrating claims, member enrollment, provider, risk adjustment, and Stars/quality data from <strong>10+ source systems</strong> into Snowflake — orchestrated with Azure Data Factory and Airflow, applied dbt staging → mart transformations with automated tests and lineage powering BI dashboards, predictive models, and GenAI applications.</li>
+        <li>Built <strong>data pipelines powering RAG/GenAI applications</strong> for clinical knowledge retrieval — engineered document ingestion, chunking, embedding generation, and vector store indexing pipelines using LangChain; designed metadata and lineage flows that feed retrieval workflows in production with PHI/PII protection and responsible AI guardrails baked into pipeline design.</li>
+        <li>Engineered <strong>ML-ready feature pipelines</strong> using Python (pandas, PySpark, scikit-learn) — built feature engineering pipelines for member experience, Stars improvement, and operational efficiency use cases, including upstream feature pipelines and data quality monitoring that powered downstream ML model training and inference.</li>
+        <li>Developed and maintained <strong>semantic layers and governed metric definitions</strong> used across Power BI dashboards, operational reporting, and AI/ML pipelines; built Streamlit data applications for Operations, Finance, and Clinical teams.</li>
+        <li>Achieved <strong>45% improvement</strong> in data delivery efficiency and <strong>99.8% data accuracy SLA</strong> across 12+ analytics and AI use cases; reduced data preparation effort by 35% through pipeline automation and feature reuse.</li>
+        <li>Collaborated with AI engineers and data scientists to ensure inference-ready datasets were versioned, monitored, and reliably delivered; mentored BI and analytics colleagues on data engineering best practices.</li>
+      </ul>
+      <div class="tl-chips">
+        <span class="tl-chip">↑45% delivery efficiency</span>
+        <span class="tl-chip">99.8% accuracy SLA</span>
+        <span class="tl-chip">↓35% prep time</span>
+        <span class="tl-chip">10+ source systems</span>
+        <span class="tl-chip">RAG + ML in production</span>
+      </div>
+    </div>
+
+    <div class="tl-item rv">
+      <div class="tl-marker">●</div>
+      <div class="tl-date">AUG 2023 – MAY 2024</div>
+      <div class="tl-role">Graduate Research Assistant</div>
+      <div class="tl-co"><strong>University of North Texas</strong><span class="sep"></span><em>Denton, TX · Data Engineering</em></div>
+      <ul class="tl-bullets">
+        <li>Designed data engineering frameworks and built <strong>Python feature engineering pipelines</strong> producing ML-ready datasets for predictive modeling research across healthcare data domains.</li>
+        <li>Built <strong>end-to-end RAG data pipelines for AI research</strong> — engineered document ingestion, text chunking, embedding generation, and vector store indexing using LangChain to support domain-specific knowledge retrieval workflows.</li>
+        <li>Developed semantic layer definitions and Power BI analytics dashboards; applied responsible data practices including PHI/PII protection and data lineage across all pipelines.</li>
+        <li>Mentored <strong>30+ graduate students</strong> on full-stack data engineering, feature engineering pipelines, and data pipelines for LLM/RAG applications in healthcare.</li>
+      </ul>
+    </div>
+
+    <div class="tl-item rv">
+      <div class="tl-marker">●</div>
+      <div class="tl-date">SEP 2021 – JAN 2023</div>
+      <div class="tl-role">Program Analyst</div>
+      <div class="tl-co"><strong>Cognizant Technology Solutions</strong><span class="sep"></span><em>Hyderabad, India</em></div>
+      <ul class="tl-bullets">
+        <li>Built analytics-ready and ML-ready datasets from CRM and ERP source systems — engineered <strong>dbt-pattern SQL transformation layers</strong> with automated quality tests, lineage, and governance.</li>
+        <li>Applied Python (pandas, PySpark, scikit-learn) for <strong>feature engineering and data preparation pipelines</strong>; designed semantic layer definitions and governed metric structures powering Power BI and Tableau dashboards.</li>
+        <li>Built upstream data pipelines feeding ML model workflows; collaborated cross-functionally with Operations, Finance, and product teams in Agile/Scrum sprints to translate business requirements into scalable data solutions.</li>
+      </ul>
+      <div class="tl-chips">
+        <span class="tl-chip">↑30% query performance</span>
+        <span class="tl-chip">↑20% data accuracy</span>
+        <span class="tl-chip">↓35% manual effort</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════ EDUCATION ════════════════════ -->
+<section id="education">
+  <div class="s-header">
+    <div class="s-eyebrow">05 / Education &amp; Certifications</div>
+    <h2 class="s-title">Academic foundation &amp;<br><em>continuous learning</em></h2>
+  </div>
+
+  <div class="edu-grid">
+    <div class="edu-card e1 rv">
+      <span class="edu-icon">🎓</span>
+      <div class="edu-deg">M.S. Computer Science</div>
+      <div class="edu-school">University of North Texas</div>
+      <div class="edu-loc">Denton, TX · USA</div>
+      <div class="edu-courses">Machine Learning &amp; AI Systems · Data Engineering · Database Systems &amp; SQL · NLP &amp; LLMs · Healthcare Data Systems · Feature Engineering · Distributed Systems · Algorithm Design</div>
+      <div class="edu-years">JAN 2023 – MAY 2024</div>
+    </div>
+
+    <div class="edu-card e2 rv rv-d1">
+      <span class="edu-icon">⚡</span>
+      <div class="edu-deg">B.Tech Electronics &amp; Communication Engineering</div>
+      <div class="edu-school">Malla Reddy Engineering College for Women</div>
+      <div class="edu-loc">India</div>
+      <div class="edu-courses">Electronics · Communication Systems · Signal Processing · Programming Fundamentals · Digital Systems · Microprocessors &amp; Microcontrollers</div>
+      <div class="edu-years">JUL 2018 – MAY 2022</div>
+    </div>
+  </div>
+
+  <div class="rv">
+    <div class="cert-section-label">Certifications &amp; Professional Learning</div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Walmart USA — Advanced Software Engineering Job Simulation</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">IBM AI Engineering Professional Certificate</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">AWS Fundamentals: Going Cloud-Native</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Conversational AI on Vertex AI &amp; Dialogflow CX</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Generative AI with Large Language Models</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Power BI Enterprise Analyst / Microsoft Fabric (DP-500)</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Azure Data Engineer Associate (DP-203)</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Azure Fundamentals (AZ-900)</div></div>
+      <div class="cert-card"><div class="cert-icon">✓</div><div class="cert-text">Google Data Analytics (Coursera)</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════ CONTACT ════════════════════ -->
+<section id="contact">
+  <div class="s-header">
+    <div class="s-eyebrow">06 / Get in Touch</div>
+    <h2 class="s-title">Let's build something<br><em>remarkable</em> together</h2>
+  </div>
+
+  <div class="contact-grid">
+    <div class="rv">
+      <div class="c-tagline">
+        Always excited to discuss new opportunities, collaborate on data engineering projects, or chat about <em>AI/ML in healthcare</em>.
+      </div>
+      <div class="c-info">
+        <div class="ci-row">
+          <div class="ci-icon-wrap">✉</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="mailto:ksanjanareddy1411@gmail.com">ksanjanareddy1411@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon-wrap">☎</div>
+          <div>
+            <div class="ci-label">Phone</div>
+            <div class="ci-value">+1 940-977-5555</div>
+          </div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon-wrap">in</div>
+          <div>
+            <div class="ci-label">LinkedIn</div>
+            <div class="ci-value"><a href="https://linkedin.com/in/sanjana-rddy" target="_blank">linkedin.com/in/sanjana-rddy</a></div>
+          </div>
+        </div>
+        <div class="ci-row">
+          <div class="ci-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg>
+          </div>
+          <div>
+            <div class="ci-label">GitHub</div>
+            <div class="ci-value"><a href="https://github.com/SanjanaReddyK" target="_blank">github.com/SanjanaReddyK</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-card rv rv-d1">
+      <div class="cc-h">Let's <em>connect</em></div>
+      <div class="cc-d">Open to <strong style="color:#fff">Senior Data Engineer, AI Engineer, Analytics Engineer, and ML Engineer roles</strong> — especially in healthcare or fintech domains.</div>
+      <div class="cc-btns">
+        <a href="https://linkedin.com/in/sanjana-rddy" class="cc-btn" target="_blank">
+          <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
+          LinkedIn Profile
+        </a>
+        <a href="https://github.com/SanjanaReddyK" class="cc-btn" target="_blank">
+          <span class="cc-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.605-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12"/></svg></span>
+          GitHub Portfolio
+        </a>
+        <a href="mailto:ksanjanareddy1411@gmail.com" class="cc-btn">
+          <span class="cc-icon">✉</span>
+          Send an Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 <span>Sanjana Reddy Kunta</span> · Built with passion for data &amp; AI</p>
+  <p>AI Engineer · Data Engineer · Analytics Engineer · ML Engineer</p>
+</footer>
+
+<script>
+// Reveal on scroll
+const ro=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('on')})},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>ro.observe(el));
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  const n=document.getElementById('mnav');
+  if(window.scrollY>40)n.classList.add('scrolled');
+  else n.classList.remove('scrolled');
+});
+
+// Project filter
+function fp(cat,btn){
+  document.querySelectorAll('.fbtn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.p-card').forEach(c=>{
+    const cc=c.dataset.cat||'';
+    if(cat==='all'||cc.includes(cat)){c.style.display='';setTimeout(()=>c.classList.add('on'),50)}
+    else c.style.display='none';
+  });
+  const f=document.querySelector('.p-card.featured');
+  if(f&&f.style.display!=='none')f.style.gridColumn='1/-1';
+}
+
+// Active nav
+const secs=document.querySelectorAll('section[id]');
+const nls=document.querySelectorAll('.nav-links a');
+secs.forEach(s=>new IntersectionObserver(e=>{
+  e.forEach(x=>{
+    if(x.isIntersecting){
+      nls.forEach(l=>{if(!l.classList.contains('cta'))l.style.color=''});
+      const m=document.querySelector(`.nav-links a[href="#${x.target.id}"]`);
+      if(m&&!m.classList.contains('cta'))m.style.color='var(--ink)';
+    }
+  });
+},{threshold:.3}).observe(s));
+</script>
+</body>
+</html>
